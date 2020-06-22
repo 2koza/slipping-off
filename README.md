@@ -1,0 +1,1 @@
+Supplementary information for "High-throughput gas separation by flexible metal–organic frameworks with fast gating and thermal management capabilities", S. Hiraide, Y. Sakanaka, H. Kajiro, S. Kawaguchi, M. T. Miyahara, and H. Tanaka, *Nat. Commun.* **x,** xxx-xxx (2020). DOI:xxx
