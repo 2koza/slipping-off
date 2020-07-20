@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import pickle
 
 dT = 1
-Tcenter = 263.0
+Tcenter = 263.15
 
 #param for CH4
 ln_beta0m = -6.39
@@ -238,15 +238,14 @@ def interpol(A,T,Tall,dT):
 if __name__ == "__main__":
     argv = sys.argv
     Tall = np.arange(200,800,dT)
-
+    #step I: mixture 5bar (CO2 2.5bar CH4 2.5bar)
+    ptotal = 5.0
+    frac_y1 = 0.5
+    frac_y2 = 1.0 - frac_y1
     try:
         with open('H.pickle','rb') as f:
             NcI,NcII,NcIII,NcIV,NmI,NmIV,SI,HI,HII,HIII,HIV,intCp = pickle.load(f)
     except:
-        #step I: mixture 5bar (CO2 2.5bar CH4 2.5bar)
-        ptotal = 5.0
-        frac_y1 = 0.5
-        frac_y2 = 1.0 - frac_y1
         x = 80.0
         NcI = np.empty(0)
         NmI = np.empty(0)
@@ -350,7 +349,7 @@ if __name__ == "__main__":
     print()
     print("effective amount adsorbed of CO2 [mmol/g]:", nci)
     print("working capacity [mmol/g]:", nci - nciii)
-    print("selectivity [-]:", nci/nmi)
+    print("selectivity [-]:", nci/nmi/(frac_y1/frac_y2))
     print("regenerability [%]:", (nci - nciii) / nci * 100)
     
     # for i in [HI,HII,HIII,HIV,intCp+shift]:

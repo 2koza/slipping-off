@@ -21,9 +21,9 @@ rho_HKUST = 1127.74393
 rho_ELM = 1290.500743
 
 def systemA():
-    NadsCO2 = 2.66462825959 * rho_HKUST # mol/m3
-    NdesCO2 = 1.1649315578 * rho_HKUST # mol/m3
-    NadsCH4 = 0.647198081 * rho_HKUST # mol/m3
+    NadsCO2 = 2.661462922098774 * rho_HKUST # mol/m3
+    NdesCO2 = 1.1618529072248476 * rho_HKUST # mol/m3
+    NadsCH4 = 0.6467749161906667 * rho_HKUST # mol/m3
     R = (NadsCO2 - NdesCO2) / NadsCO2
     S = (NadsCO2/NadsCH4) / (yiCO2/yiCH4)
 
@@ -142,9 +142,9 @@ def systemB_caseII():
     S_B1 = (NadsCO2B1/NadsCH4B1) / (yiCO2/yiCH4)
 
     # full spec
-    NadsCO2B2 = 2.66462825959 * rho_HKUST # mol/m3
-    NdesCO2B2 = 1.1649315578 * rho_HKUST # mol/m3
-    NadsCH4B2 = 0.647198081 * rho_HKUST # mol/m3
+    NadsCO2B2 = 2.661462922098774 * rho_HKUST # mol/m3
+    NdesCO2B2 = 1.1618529072248476 * rho_HKUST # mol/m3
+    NadsCH4B2 = 0.6467749161906667 * rho_HKUST # mol/m3
     # for slipping off
     NadsCO2B2slip = 0.531504531142 * rho_HKUST # mol/m3
     R_B2 = (NadsCO2B2 - NdesCO2B2) / NadsCO2B2
@@ -162,7 +162,7 @@ def systemB_caseII():
     ZinCO2 = theta * Fi * yiCO2
     ZinCH4 = theta * Fi * yiCH4
     ZpurgeCH4B1 = alpha * V * (1 - eps) * NdesCO2B1 # mol
-    print("####### system B case I #########")
+    print("####### system B case II #########")
     print(" *** column B1 *** ")
     print("selectivity:", S_B1)
     print("Regenerability:", R_B1)
